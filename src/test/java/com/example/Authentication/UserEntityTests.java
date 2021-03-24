@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class EntityTests {
+public class UserEntityTests {
 
 	@Test
 	public void WhenSetPassword_CheckGetPassword() {

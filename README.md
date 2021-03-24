@@ -1,6 +1,19 @@
 # Handling User Authentication .
 ## DESCRIPTION
 
+Authentication is a simple program that allows registered users to login and has been tested with Junit5. If the user can login successfully, they will be taken to a page that states they have successfully logged in. If the user puts an invalid input or gets the password or username wrong, then they will be directed to a page that denies access. 
+
+##Directions for Building Project:
+1.	Unzip project or import project from Github link into Eclipse Enterprise IDE 
+2.	Right click folder and select run as > maven install to install necessary jar libraries 
+3.	Edit application.property file to connect to local MySQL database
+4.	Open the AuthenticationApplication.java file and run the file
+
+##Directions for Running Tests:
+1.	Open test files in src/test/java/com.example.Authentication
+2.	Run the test files as Junit test
+
+
 
 ## Project objective:
 

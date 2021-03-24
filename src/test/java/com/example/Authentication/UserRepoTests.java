@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @DataJpaTest
 
-public class AuthenticationTests {
+public class UserRepoTests {
 
     @Autowired
     private TestEntityManager entityManager;
@@ -41,26 +41,30 @@ public class AuthenticationTests {
         // when
         Optional<User> found = userRepository.findByName(dummyUser.getName());
 
+        User founded = found.get();
+        
+        
         // then
 
-        assertEquals(found.getName(), dummyUser.getName());
+        assertEquals(founded.getName(), dummyUser.getName());
     }
 
 
-    @Test
-    public void whenGetPassword_thenReturnBoolean() {
-
-    	User dummyUser = new User();
-        dummyUser.setName("Dummy");
-        dummyUser.setEmail("test@test.com");
-        dummyUser.setPassword("password");
-        entityManager.persist(dummyUser);
-        entityManager.flush();
-        
-        String test = dummyUser.getPassword();
-        
-    	assertEquals(test, "password");
-    }
+//    
+//    @Test
+//    public void whenGetPassword_thenReturnBoolean() {
+//
+//    	User dummyUser = new User();
+//        dummyUser.setName("Dummy");
+//        dummyUser.setEmail("test@test.com");
+//        dummyUser.setPassword("password");
+//        entityManager.persist(dummyUser);
+//        entityManager.flush();
+//        
+//        String test = dummyUser.getPassword();
+//        
+//    	assertEquals(test, "password");
+//    }
 
 
 

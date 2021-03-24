@@ -44,23 +44,20 @@ public class LoginController {
     	User checkUser; 
     	try {
     		checkUser= userService.GetUserByName(username);
+        	if (userService.verifyPassword(username, password) == false) {
+        		log.info(username + " - " + password);
+        		map.addAttribute("error", "Error Wrong password");
+            	return "deniedAccess";
+            }
+            
+            else 
+            	return "success";
+            
     	} catch (UserNotFoundException unfe) {
     		throw unfe;
     	}
     	
-    	if (userService.GetUserByName(username) != null) {
     	
-    		map.addAttribute("error", "Error. User not found");
-    		return "loginform";
-    	}
-    	else if (userService.verifyPassword(username, password) == false) {
-    		
-    		map.addAttribute("error", "Error Wrong password");
-        	return "loginform";
-        }
-        
-        else 
-        	return "success";
 
     }
 }
